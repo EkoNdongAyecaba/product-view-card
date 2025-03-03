@@ -1,3 +1,133 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 .montserrat-500 {
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
@@ -27,4 +157,124 @@
   --Grey: hsl(228, 12%, 48%);
   --Cream: hsl(30, 38%, 92%);
   --White: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: var(--Cream);
+  /* padding: 1.5rem 1rem;
+  margin: 0 auto; */
+  padding: 16px 10px;
+  color: var(--Grey);
+  font-size: clamp(1rem, 0.85rem + 1.5vw, 2rem);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  border-radius: 10px;
+  background-color: var(--White);
+  max-width: 460px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .product__img {
+    max-inline-size: 100%;
+    block-size: auto;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+  }
+}
+
+.product {
+  padding: 1rem;
+}
+
+.product__type {
+  font-family: "Montserrat", serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.product__title {
+  font-family: "Fraunces", serif;
+  color: var(--Black);
+  font-size: clamp(1.8rem, 0.75rem + 1.5vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.perfume__description {
+  font-family: "Montserrat", serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.2rem;
+  max-inline-size: 30ch;
+  margin-bottom: 1.5em;
+}
+
+.product__price {
+  font-family: "Fraunces", serif;
+  display: flex;
+  gap: 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--green-500);
+  margin-bottom: 1em;
+}
+
+.discount {
+  font-size: 0.8rem;
+  align-self: center;
+  color: var(--Grey);
+  text-decoration: line-through;
+}
+
+.btn {
+  display: flex;
+  font-family: "Montserrat", serif;
+  font-size: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  gap: 12px;
+  color: var(--White);
+  background-color: var(--green-500);
+  padding: 1em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--Green-700);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    max-width: 768px;
+    .product__img {
+      border-radius: 10px 0 0 10px;
+      height: 100%;
+    }
+  }
+}
+
+.attribution {
+  display: none;
 }
